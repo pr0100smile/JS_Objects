@@ -11,13 +11,13 @@ const setActiveClass = (element, index, className = 'tab__content_active') => {
 
 const checkoutTabs = (item, index) => {
     item.addEventListener('click', () => {
-        if (item.classList.contains('tab__content_active')) return;
+        if (item.classList.contains('tab_active')) return;
         console.log(item);
 
-        clearActiveClass(tabItems);
-        clearActiveClass(contentItems);
+        clearActiveClass(tabItems, 'tab_active');
+        clearActiveClass(contentItems, 'tab__content_active');
 
-        setActiveClass(tabItems, index);
+        item.classList.add('tab_active');
         setActiveClass(contentItems, index);
     });
 }
